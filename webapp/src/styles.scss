@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+$fa-font-path: "~font-awesome/fonts"; 
+@import "~bootstrap/scss/bootstrap"; 
+@import "~font-awesome/scss/font-awesome";
+
+
+.ng-sidebar {
+    width: 15%;
+    background-color: #f8f9fa !important;
+    border-top: 0px solid black !important;
+}
+
+.ng-sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.ng-sidebar::-webkit-scrollbar-track {
+    -webkit-box-shadow: auto; 
+    box-shadow: auto;
+    -webkit-border-radius: auto;
+    border-radius: auto;
+    background:auto;    
+}
+
+.ng-sidebar::-webkit-scrollbar-thumb {
+    background: rgb(230, 230, 230); 
+    -webkit-border-radius:auto;
+    border-radius:auto;
+    background:auto; 
+    -webkit-box-shadow:auto; 
+    box-shadow: auto
+}
+
+.ng-sidebar::-webkit-scrollbar-thumb:window-inactive {
+    background: auto;
+}
+
+@media screen and (min-width: 1300px) {
+    .ng-sidebar {
+        border: 1px solid lightgray;
+        background-color: white;
+        width: 15%;
+    }
+} 
+
+@media screen and (max-width: 1300px) {
+    .ng-sidebar {
+        border: 1px solid lightgray;
+        background-color: white;
+        width: 193px;
+    }
+}
+

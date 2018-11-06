@@ -1,0 +1,12 @@
+{
+    "jwtPrivateKey": "JWT_KEY",
+    "googleOauth": {
+        "clientId": "GOOGLE_CLIENT_ID",
+        "clientSecret": "GOOGLE_CLIENT_SECRET"
+    },
+    "facebookOauth": {
+        "clientId": "FACEBOOK_CLIENT_ID",
+        "clientSecret": "FACEBOOK_CLIENT_SECRET"
+    },
+    "mongoHost": "MONGO_HOST"
+}

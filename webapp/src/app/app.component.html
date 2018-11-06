@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <app-navbar></app-navbar>
+  <ng-sidebar-container>
+    <!-- A sidebar -->
+    <ng-sidebar mode="push" position="left" [(opened)]="_opened">
+      <app-sidebar-categories></app-sidebar-categories>
+
+      <hr>
+
+      <!-- <app-sidebar-allergen *ngIf="isActive('allergen')"></app-sidebar-allergen>
+      <app-sidebar-meal *ngIf="isActive('meal')"></app-sidebar-meal>
+      <app-sidebar-menu *ngIf="isActive('menu')"></app-sidebar-menu>
+      <app-sidebar-pdf-service *ngIf="isActive('pdf-service')"></app-sidebar-pdf-service> -->
+    </ng-sidebar>
+
+
+    <!-- Page content -->
+    <div ng-sidebar-content>
+
+
+
+      <div class="mainContainer">
+        <app-sidebar-toggler *ngIf="isAuthenticated()" (toggled)="_toggleSidebar()"></app-sidebar-toggler>
+        <div class="myInnerContainer">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+
+
+    </div>
+  </ng-sidebar-container>
+</div>

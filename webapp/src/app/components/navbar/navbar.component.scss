@@ -1,0 +1,38 @@
+.icons{
+    color:black;
+    font-size:1.5em;
+}
+
+.spanSpace{
+    margin-left:10px;
+    color:black;
+}
+
+.title{
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-size: 2.0em;
+}
+
+.main-nav{
+    border-bottom:0.5px solid lightgray;
+    padding-bottom:10px;
+}
+
+.navItem-hover:hover{
+    .icons{
+        color: rgb(100,100,100);
+    }
+    .spanSpace{
+        color:rgb(100,100,100);
+    }
+}
+
+#login{
+    cursor: pointer;
+}
+
+
+.navbar {
+    height: 100%;
+}

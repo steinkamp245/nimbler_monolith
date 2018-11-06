@@ -1,0 +1,69 @@
+.item {
+    display: block;
+    position: relative;
+    margin-bottom: 25px;
+    z-index: 200;
+  }
+  
+.item:hover {
+  background-color: rgba(211, 211, 211, 0.644);
+  border-radius: 20px;
+  cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+}
+
+.item:hover .close {
+  visibility: visible;
+}
+
+.item:hover .settings {
+  visibility: visible;
+}
+
+.btn {
+  position: relative;
+  border-radius: 35px;
+  background-color: darkgray
+}
+
+.my-btn {
+  margin-left: 7px;
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  position: relative;
+}
+
+
+span {
+  position: absolute;
+  top: 32%;
+  left: 115%;
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+}
+
+.selected {
+  background-color: rgba(211, 211, 211, 0.644);
+  border-radius: 20px;
+}
+
+#firstItem {
+  margin-top: 15px;
+}

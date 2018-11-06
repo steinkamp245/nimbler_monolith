@@ -1,0 +1,12 @@
+.ng-valid:not(form)   { border-left: 5px solid #28a745; /* green */ }
+.ng-invalid:not(form) { border-left: 5px solid #dc3545; /* red */   }
+
+.btn-google {
+    color: white;
+    background-color: #ea4335;
+  }
+  
+  .btn-facebook {
+    color: white;
+    background-color: #3b5998;
+  }

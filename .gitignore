@@ -1,0 +1,16 @@
+.DS_Store
+
+.idea/
+.tscache/
+tmp/
+espowered/
+
+node_modules/
+typings/
+docker-compose.yaml
+
+server/**/error.log
+server/**/set-config.sh
+server/**/*.js
+server/**/*.js.map
+server/**/*.d.ts

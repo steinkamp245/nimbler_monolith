@@ -1,0 +1,27 @@
+.myInnerContainer{
+  flex-grow: 1;
+}
+
+.mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+ng-sidebar-container {
+  height: 90%;
+  position: absolute;
+  top: 10%;
+}
+
+.wrapper {
+  height: 100vh;
+  position: relative;
+}
+
+app-navbar {
+  position: absolute;
+  top: 0%;
+  width: 100vw;
+  height: 10%;
+}
