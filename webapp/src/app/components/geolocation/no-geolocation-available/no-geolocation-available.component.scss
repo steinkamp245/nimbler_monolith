@@ -1,0 +1,144 @@
+@media screen and (min-width: 765px) {
+    .myContainer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .myTextContent {
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        width: 40%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    h1 {
+        padding: 15px;
+        font-weight: bold;
+        font-size: 55px;
+    }
+
+    .compass {
+        margin-left: 35%;
+        width:  260px;
+        height: 260px;
+    }
+    .wrapper {
+        position: fixed;
+        z-index: 5000;
+        color: white;
+        height: 100%;
+        top: 30%;
+        left: 5%;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .myContainer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+        align-items: center
+    }
+
+    .myTextContent {
+        width: 80%;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    h1 {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        font-weight: bold;
+        font-size: 55px;
+    }
+
+    .compass {
+        margin-top: 20%;
+        width:  260px;
+        height: 260px;
+    }
+
+    .wrapper {
+        position: fixed;
+        z-index: 5000;
+        color: white;
+        height: 100%;
+    }
+  
+}
+
+
+@media screen and (max-height: 664px) and (max-width: 765px){
+    .compass {
+        width: 140px;
+        height: 140px;
+    }
+
+
+    .my-btn {
+        width: 90px;
+        height: 30px;
+    }
+    
+    .btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        border-radius: 35px;
+    }
+    
+    .refresh {
+        position: absolute;
+        top: -1%;
+        left: 33%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .wrapper {
+        position: fixed;
+        z-index: 5000;
+        color: white;
+        height: 100%;
+        top: 0%;
+        left: 5%;
+    }
+
+}
+
+.my-btn {
+    width: 110px;
+    height: 50px;
+}
+
+.btn {
+    margin-top: 50px;
+    position: relative;
+    border-radius: 35px;
+}
+
+.refresh {
+    position: absolute;
+    top: 4.5%;
+    left: 30%;
+    width: 45px;
+    height: 45px;
+}
+
+
+
+.background {
+    background-color: black;
+    opacity: 0.8;
+    height: 100vh;
+    width: 100vw;
+    z-index: 4999;
+    position: fixed;
+}
+

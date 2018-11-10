@@ -8,10 +8,9 @@ import { Router } from '@angular/router';
 })
 export class SidebarCategoriesComponent implements OnInit {
 
-  @ViewChild('allergen') allergen: ElementRef;
-  @ViewChild('meal') meal: ElementRef;
-  @ViewChild('menu') menu: ElementRef;
-  @ViewChild('pdf_service') pdf_service: ElementRef;
+  @ViewChild('events') events: ElementRef;
+  @ViewChild('chat') chat: ElementRef;
+
 
   currentURL = this.router.url;
 

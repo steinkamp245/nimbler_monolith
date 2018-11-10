@@ -1,3 +1,4 @@
+<app-no-geolocation-available *ngIf="showNoGeolocationErrorScreen"></app-no-geolocation-available>
 <div class="wrapper">
   <app-navbar></app-navbar>
   <ng-sidebar-container>
@@ -7,10 +8,8 @@
 
       <hr>
 
-      <!-- <app-sidebar-allergen *ngIf="isActive('allergen')"></app-sidebar-allergen>
-      <app-sidebar-meal *ngIf="isActive('meal')"></app-sidebar-meal>
-      <app-sidebar-menu *ngIf="isActive('menu')"></app-sidebar-menu>
-      <app-sidebar-pdf-service *ngIf="isActive('pdf-service')"></app-sidebar-pdf-service> -->
+      <app-sidebar-events *ngIf="isActive('events')"></app-sidebar-events>
+      <app-sidebar-chat *ngIf="isActive('chat')"></app-sidebar-chat>
     </ng-sidebar>
 
 

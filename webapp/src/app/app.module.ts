@@ -24,8 +24,15 @@ import { SidebarTogglerComponent } from './components/sidebar/sidebar-toggler/si
 import { SidebarCategoriesComponent } from './components/sidebar/sidebar-categories/sidebar-categories.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarModule } from 'ng-sidebar';
-import { AllergenComponent } from './components/main/allergen/allergen.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { EventsComponent } from './components/main/events/events.component';
+import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './components/map/map.component';
+import { NoGeolocationAvailableComponent } from './components/geolocation/no-geolocation-available/no-geolocation-available.component';
+import { SidebarEventsComponent } from './components/sidebar/sidebar-events/sidebar-events.component';
+import { SidebarChatComponent } from './components/sidebar/sidebar-chat/sidebar-chat.component';
+import { ChatComponent } from './components/main/chat/chat.component';
+
 
 
 @NgModule({
@@ -45,7 +52,12 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     SignInRedirectComponent,
     SidebarTogglerComponent,
     SidebarCategoriesComponent,
-    AllergenComponent
+    EventsComponent,
+    MapComponent,
+    NoGeolocationAvailableComponent,
+    SidebarEventsComponent,
+    SidebarChatComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +67,10 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     HttpClientModule,
     SidebarModule.forRoot(),
     BrowserAnimationsModule,
-    NgxWebstorageModule.forRoot()
+    NgxWebstorageModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyALrPFiYjvnAR9Ai25kbQsUT2SXvpdp0X4'
+    })
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

@@ -1,28 +1,15 @@
-<div (click)="focusMe('allergen')" id="firstItem" routerLink="/main/allergen" routerLinkActive="active" tabindex="-1" class="item"
-      [class.selected]="isMenuPointSelected('allergen')">
-      <button #allergen type="button" class="btn btn-secondary my-btn">
-        <img src="/assets/peanut.svg" class="imgPenguin">
-        <span>Allergen</span>
-      </button>
-    </div>
+<div (click)="focusMe('events')" id="firstItem" routerLink="/main/events" routerLinkActive="active" tabindex="-1" class="item"
+  [class.selected]="isMenuPointSelected('events')">
+  <button #events type="button" class="btn btn-secondary my-btn">
+    <img src="/assets/events.svg" class="imgPenguin">
+    <span>Events</span>
+  </button>
+</div>
 
-    <div (click)="focusMe('meal')" routerLink="/main/meal" routerLinkActive="active" tabindex="-1" class="item" [class.selected]="isMenuPointSelected('meal')">
-      <button #meal type="button" class="btn btn-secondary my-btn">
-        <img src="/assets/chicken.svg" class="imgPenguin">
-        <span>Meal</span>
-      </button>
-    </div>
-
-    <div (click)="focusMe('menu')" routerLink="/main/menu" routerLinkActive="active" tabindex="-1" class="item" [class.selected]="isMenuPointSelected('menu')">
-      <button #menu type="button" class="btn btn-secondary my-btn">
-        <img src="/assets/menu.svg" class="imgPenguin">
-        <span>Menu</span>
-      </button>
-    </div>
-
-    <div (click)="focusMe('pdf_service')" routerLink="/main/pdf-service" routerLinkActive="active" tabindex="-1" class="item" [class.selected]="isMenuPointSelected('pdf-service')">
-      <button #pdf_service type="button" class="btn btn-secondary my-btn">
-        <img src="/assets/pdf-file.svg" class="imgPenguin">
-        <span>PDF-Service</span>
-      </button>
-    </div>
+<div (click)="focusMe('chat')" routerLink="/main/chat" routerLinkActive="active" tabindex="-1" class="item"
+  [class.selected]="isMenuPointSelected('chat')">
+  <button #chat type="button" class="btn btn-secondary my-btn">
+    <img src="/assets/chat.svg" class="imgPenguin">
+    <span>Lorem Ipsum</span>
+  </button>
+</div>

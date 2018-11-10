@@ -7,16 +7,22 @@ import { MainComponent } from './components/main/main.component';
 import { SignOutComponent } from './components/user/sign-out/sign-out.component';
 import { AuthGuard } from './auth.guard';
 import { SignInRedirectComponent } from './components/user/sign-in-redirect/sign-in-redirect.component';
-import { AllergenComponent } from './components/main/allergen/allergen.component';
+import { EventsComponent } from './components/main/events/events.component';
+import { NoGeolocationAvailableComponent } from './components/geolocation/no-geolocation-available/no-geolocation-available.component';
+import { ChatComponent } from './components/main/chat/chat.component';
+
+
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'geolocation-error', component: NoGeolocationAvailableComponent },
   { path: 'users/sign-in', component: SignInComponent },
   { path: 'users/sign-out', component: SignOutComponent },
   { path: 'users/sign-in-redirect', component: SignInRedirectComponent },
   {
     path: 'main', component: MainComponent, canActivate: [AuthGuard], children: [
-      { path: 'allergen', component: AllergenComponent }
+      { path: 'events', component: EventsComponent },
+      { path: 'chat', component: ChatComponent }
     ]
   },
   { path: '**', component: HomeComponent }

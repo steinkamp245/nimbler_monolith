@@ -13,13 +13,14 @@ export class UserService {
   private options = { withCredentials: true };
   private baseURL = canteenConf.restApiUrl;
   isAuthenticated = false;
-  @Output() isAuthenticatedEvent: EventEmitter<boolean> = new EventEmitter();
+  @Output() isAuthenticatedEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 
   constructor(private http: HttpClient) { }
 
   changeAuthenticationStatus(status: boolean) {
     this.isAuthenticatedEvent.emit(status);
+    this.isAuthenticated = status;
   }
 
   socialSignIn(socialService: 'google' | 'facebook') {
@@ -28,7 +29,7 @@ export class UserService {
 
   signOut(): Observable<null> {
     return this.http.get(this.baseURL + '/auth/sign-out', this.options).pipe(
-      map(data => this.isAuthenticated = false),
+      map(data => this.changeAuthenticationStatus(false)),
       catchError(this.handleError)
     );
   }

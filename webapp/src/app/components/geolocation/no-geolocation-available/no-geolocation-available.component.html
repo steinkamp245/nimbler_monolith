@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <div class="myContainer">
+    <div class="myTextContent">
+      <h1>Oops!</h1>
+      <p>You need to enable location sharing to use Nimbler. Visit your browser settings or our FAQ page to learn how.</p>
+      <button (click)="reloadPage()" type="button" class="btn btn-danger my-btn">
+        <img src="/assets/refresh.svg" class="refresh">
+      </button>
+    </div>
+    <div>
+      <img src="/assets/compass.svg" class="compass" [@toggleArrow]="isOpen ? 'open' : 'closed'">
+    </div>
+  </div>
+</div>
+<div class="background"></div>
