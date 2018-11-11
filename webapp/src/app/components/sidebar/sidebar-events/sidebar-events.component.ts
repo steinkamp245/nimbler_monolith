@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventsService } from '../../main/events/events.service';
 
 @Component({
   selector: 'app-sidebar-events',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarEventsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private eventsService: EventsService) { }
 
   ngOnInit() {
+
   }
 
+  setRange(value: number) {
+    this.eventsService.setSearchRangeSubject(value);
+  }
 }

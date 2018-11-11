@@ -1,12 +1,12 @@
 <agm-map *ngIf="myPosition" [latitude]="myPosition.coords.latitude" [longitude]="myPosition.coords.longitude" [zoom]="myMap.zoom"
-  [zoomControl]="false">
+  [zoomControl]="false" (mapReady)="setMapReady()">
 
   <agm-marker [latitude]="myPosition.coords.latitude" [longitude]="myPosition.coords.longitude">
   </agm-marker>
 
 
   <agm-circle [latitude]="myPosition.coords.latitude" [longitude]="myPosition.coords.longitude" [radius]="mySearchRadius.radius"
-    [fillColor]="mySearchRadius.fillColor" [fillOpacity]="mySearchRadius.fillOpacity" [editable]="true">
+    [fillColor]="mySearchRadius.fillColor" [fillOpacity]="mySearchRadius.fillOpacity" [editable]="false">
   </agm-circle>
 
 
