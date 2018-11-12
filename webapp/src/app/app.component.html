@@ -6,7 +6,6 @@
     <ng-sidebar mode="push" position="left" [(opened)]="_opened">
       <app-sidebar-categories></app-sidebar-categories>
 
-      <hr>
 
       <app-sidebar-events *ngIf="isActive('events')"></app-sidebar-events>
       <app-sidebar-chat *ngIf="isActive('chat')"></app-sidebar-chat>

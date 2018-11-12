@@ -9,9 +9,9 @@
 }
 
 ng-sidebar-container {
-  height: 90%;
+  height: 92%;
   position: absolute;
-  top: 10%;
+  top: 8%;
 }
 
 .wrapper {
@@ -22,5 +22,15 @@ app-navbar {
   position: absolute;
   top: 0%;
   width: 100vw;
-  height: 10%;
+  height: 8%;
+}
+
+app-sidebar-categories {
+  width: 100%;
+}
+
+app-sidebar-events {
+  width: 100%;
+  flex-grow: 1;
+  position: relative;
 }

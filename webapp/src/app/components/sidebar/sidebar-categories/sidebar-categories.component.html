@@ -1,15 +1,20 @@
-<div (click)="focusMe('events')" id="firstItem" routerLink="/main/events" routerLinkActive="active" tabindex="-1" class="item"
-  [class.selected]="isMenuPointSelected('events')">
-  <button #events type="button" class="btn btn-secondary my-btn">
-    <img src="/assets/events.svg" class="imgPenguin">
-    <span>Events</span>
-  </button>
-</div>
+<div class="wrapper">
+  <div (click)="focusMe('events')" routerLink="/main/events" routerLinkActive="active" tabindex="-1"
+    class="item" [class.selected]="isMenuPointSelected('events')">
+    <button #events type="button" class="btn btn-secondary my-btn">
+      <img src="/assets/events.svg">
+      <span>Events</span>
+    </button>
+  </div>
 
-<div (click)="focusMe('chat')" routerLink="/main/chat" routerLinkActive="active" tabindex="-1" class="item"
-  [class.selected]="isMenuPointSelected('chat')">
-  <button #chat type="button" class="btn btn-secondary my-btn">
-    <img src="/assets/chat.svg" class="imgPenguin">
-    <span>Lorem Ipsum</span>
-  </button>
+  <div (click)="focusMe('chat')" routerLink="/main/chat" routerLinkActive="active" tabindex="-1" class="item"
+    [class.selected]="isMenuPointSelected('chat')">
+    <button #chat type="button" class="btn btn-secondary my-btn">
+      <img src="/assets/chat.svg">
+      <span>Chat</span>
+    </button>
+  </div>
+
+  <hr>
+
 </div>

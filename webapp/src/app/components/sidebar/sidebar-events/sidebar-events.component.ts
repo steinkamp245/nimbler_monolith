@@ -14,7 +14,5 @@ export class SidebarEventsComponent implements OnInit {
 
   }
 
-  setRange(value: number) {
-    this.eventsService.setSearchRangeSubject(value);
-  }
+
 }

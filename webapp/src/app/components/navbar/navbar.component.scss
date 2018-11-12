@@ -1,8 +1,3 @@
-.icons{
-    color:black;
-    font-size:1.5em;
-}
-
 .spanSpace{
     margin-left:10px;
     color:black;
@@ -28,11 +23,44 @@
     }
 }
 
-#login{
-    cursor: pointer;
-}
 
 
 .navbar {
     height: 100%;
+}
+
+.myContainer {
+    height: 100%;
+    width: 130px;
+    font-size: 23px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.myImg {
+    height: 40px;
+    width: 40px;
+}
+
+span {
+    padding-left: 5px;
+    
+}
+
+@media screen and (max-width: 580px) {
+    .myContainer {
+        height: 100%;
+        width: 120px;
+        font-size: 18px;
+    }
+
+    .myImg {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+.myContainer:hover {
+    background-color: rgba(245, 242, 242, 0.91);
+    border-radius: 20px;
 }

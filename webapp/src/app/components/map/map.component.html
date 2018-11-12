@@ -1,13 +1,12 @@
-<agm-map *ngIf="myPosition" [latitude]="myPosition.coords.latitude" [longitude]="myPosition.coords.longitude" [zoom]="myMap.zoom"
-  [zoomControl]="false" (mapReady)="setMapReady()">
+<agm-map *ngIf="myPosition; else loading" [latitude]="myPosition.coords.latitude" [longitude]="myPosition.coords.longitude"
+  [zoomControl]="false" [minZoom]="13" [zoom]="myMap.zoom">
 
   <agm-marker [latitude]="myPosition.coords.latitude" [longitude]="myPosition.coords.longitude">
   </agm-marker>
 
 
-  <agm-circle [latitude]="myPosition.coords.latitude" [longitude]="myPosition.coords.longitude" [radius]="mySearchRadius.radius"
-    [fillColor]="mySearchRadius.fillColor" [fillOpacity]="mySearchRadius.fillOpacity" [editable]="false">
-  </agm-circle>
-
-
 </agm-map>
+
+<ng-template #loading>
+  <img id="loading" src="/assets/loading.gif" alt="Loading maps">
+</ng-template>
