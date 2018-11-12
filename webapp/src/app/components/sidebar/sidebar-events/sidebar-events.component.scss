@@ -1,13 +1,55 @@
-#filter {
-    width: 20%;
+.wrapper {
     position: absolute;
-    top: 10%;
-    left: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
+#category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+p {
+    margin: 0px;
+    padding: 11px;
+    font-weight: bold;
+    display: block;
+}
+
+mat-form-field {
+    width: 80%;
+
+}
+
+
+
+
+#slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+mat-slider {
+    width: 85%;
+  }
+
+
+
+
+  .space {
+    flex-grow: 1
+}
+
+
+
 #add {
-    width: 22%;
-    position: absolute;
-    bottom: 17%;
-    left: 39%;
+    height: 60px;
+    width: 60px;
+    margin-bottom: 60px;
+    margin-top: 40px;
 }

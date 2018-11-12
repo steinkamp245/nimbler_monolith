@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../../main/events/events.service';
 
+
 @Component({
   selector: 'app-sidebar-events',
   templateUrl: './sidebar-events.component.html',
@@ -14,5 +15,17 @@ export class SidebarEventsComponent implements OnInit {
 
   }
 
+
+  formatLabel(value: number | null) {
+    if (!value) {
+      return 0;
+    }
+
+    if (value >= 0) {
+      return Math.round(value / 10) + 'h';
+    }
+
+    return value;
+  }
 
 }

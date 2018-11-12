@@ -1,4 +1,28 @@
-<img id="filter" src="/assets/filter.svg">
+<div class="wrapper">
+    <div>
+        <br>
+        <div id="category">
+            <p>Event category</p>
+            <mat-form-field>
+                <select matNativeControl required>
+                    <option value="sport">Sport</option>
+                    <option value="chill">Chill</option>
+                    <option value="party">Party</option>
+                    <option value="education">Education</option>
+                    <option value="other">Other</option>
+                </select>
+            </mat-form-field>
+        </div>
 
+        <br><br>
 
-<img id="add" src="/assets/add.svg">
+        <div id="slider">
+            <p>Latest start time: {{formatLabel(slider.value)}}</p>
+            <mat-slider #slider thumbLabel [displayWith]="formatLabel" tickInterval="10" min="10" max="240" value="40"></mat-slider>
+        </div>
+    </div>
+
+    <div class="space"></div>
+
+    <img id="add" src="/assets/add.svg">
+</div>

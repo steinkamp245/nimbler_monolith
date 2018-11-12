@@ -3,14 +3,15 @@ $fa-font-path: "~font-awesome/fonts";
 @import "~bootstrap/scss/bootstrap"; 
 @import "~font-awesome/scss/font-awesome";
 
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 
 
 @media screen and (min-width: 1300px) {
     .ng-sidebar {
         width: 15%; 
         height: 100%;
-        display: flex;
-        flex-wrap: wrap;
+        display: flex;  
         flex-direction: column;
         align-content: flex-start;
         border: 1px solid lightgray;
@@ -22,7 +23,6 @@ $fa-font-path: "~font-awesome/fonts";
         width: 193px;
         height: 100%;
         display: flex;
-        flex-wrap: wrap;
         flex-direction: column;
         align-content: flex-start;
         border: 1px solid lightgray;

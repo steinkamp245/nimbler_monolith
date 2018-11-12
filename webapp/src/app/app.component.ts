@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from './components/user/user.service';
 import { GeolocationService } from './components/geolocation/geolocation.service';
+import 'hammerjs';
 
 
 @Component({
