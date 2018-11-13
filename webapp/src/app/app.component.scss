@@ -35,3 +35,44 @@ app-sidebar-events {
   position: relative;
   overflow-y: scroll;
 }
+
+
+@media screen and (max-height: 664px) {
+  .myInnerContainer{
+    flex-grow: 1;
+  }
+  
+  .mainContainer {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  
+  ng-sidebar-container {
+    height: 85%;
+    position: absolute;
+    top: 15%;
+  }
+  
+  .wrapper {
+    height: 100vh;
+  }
+  
+  app-navbar {
+    position: absolute;
+    top: 0%;
+    width: 100vw;
+    height: 15%;
+  }
+  
+  app-sidebar-categories {
+    width: 100%;
+  }
+  
+  app-sidebar-events {
+    width: 100%;
+    flex-grow: 1;
+    position: relative;
+    overflow-y: scroll;
+  }
+}

@@ -60,7 +60,20 @@ span {
     }
 }
 
-.myContainer:hover {
-    background-color: rgba(245, 242, 242, 0.91);
+
+.btn-outline-danger {
     border-radius: 20px;
+    width: 120px;
+    height: 47px;
+    border: 2px solid;
+    font-size: 18px;
+}
+
+
+.btn-outline-secondary {
+    border-radius: 20px;
+    width: 120px;
+    height: 47px;
+    border: 2px solid;
+    font-size: 18px;
 }

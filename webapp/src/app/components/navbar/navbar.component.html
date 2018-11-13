@@ -2,24 +2,23 @@
   <div class="container-fluid">
     <a class="navbar-brand title" routerLink="/home">{{title}}</a>
     <ul class="navbar-nav ">
+
       <li *ngIf="!userService.isAuthenticated">
         <div class="myContainer">
           <app-modal [component]="signInComponent">
-            <img src="/assets/login.svg" class="myImg">
-            <span>Login</span>
+            <button type="button" class="btn btn-outline-danger">Login</button>
           </app-modal>
         </div>
       </li>
+
       <li *ngIf="userService.isAuthenticated">
         <div class="myContainer">
-          <img src="/assets/profil.svg" class="myImg">
-          <span>Profil</span>
+          <button type="button" class="btn btn-outline-secondary">Profil</button>
         </div>
       </li>
       <li *ngIf="userService.isAuthenticated">
         <div class="myContainer" routerLink="/users/sign-out" routerLinkActive="active" tabindex="-1">
-          <img src="/assets/logout.svg" class="myImg">
-          <span>Logout</span>
+          <button type="button" class="btn btn-outline-danger">Logout</button>
         </div>
       </li>
     </ul>
