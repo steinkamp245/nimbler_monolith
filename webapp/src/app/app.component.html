@@ -1,31 +1,24 @@
 <app-no-geolocation-available *ngIf="showNoGeolocationErrorScreen"></app-no-geolocation-available>
 <div class="wrapper">
   <app-navbar></app-navbar>
-  <ng-sidebar-container>
-    <!-- A sidebar -->
-    <ng-sidebar mode="push" position="left" [(opened)]="_opened">
-      <app-sidebar-categories></app-sidebar-categories>
-
-
-      <app-sidebar-events *ngIf="isActive('events')"></app-sidebar-events>
-      <app-sidebar-chat *ngIf="isActive('chat')"></app-sidebar-chat>
-    </ng-sidebar>
-
-
-    <!-- Page content -->
-    <div ng-sidebar-content>
-
-
-
-      <div class="mainContainer">
-        <app-sidebar-toggler *ngIf="isAuthenticated()" (toggled)="_toggleSidebar()"></app-sidebar-toggler>
-        <div class="myInnerContainer">
-          <router-outlet></router-outlet>
+  <mat-sidenav-container class="sidebarContainer" hasBackdrop="false">
+    <mat-sidenav mode="side" disableClose #sidenav [(opened)]="opened">
+      <div class="sidebar">
+        <div>
+          <app-sidebar-categories></app-sidebar-categories>
+        </div>
+        <div class="categorieSetup">
+          <app-sidebar-events *ngIf="isActive('events')"></app-sidebar-events>
+          <app-sidebar-chat *ngIf="isActive('chat')"></app-sidebar-chat>
         </div>
       </div>
+    </mat-sidenav>
 
+    <mat-sidenav-content>
 
+      <app-sidebar-toggler *ngIf="isAuthenticated()" (click)="sidenav.toggle()"></app-sidebar-toggler>
+      <router-outlet></router-outlet>
 
-    </div>
-  </ng-sidebar-container>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

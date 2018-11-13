@@ -4,7 +4,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 import { AppComponent } from './app.component';
@@ -28,7 +29,6 @@ import { SignInRedirectComponent } from './components/user/sign-in-redirect/sign
 import { SidebarTogglerComponent } from './components/sidebar/sidebar-toggler/sidebar-toggler.component';
 import { SidebarCategoriesComponent } from './components/sidebar/sidebar-categories/sidebar-categories.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidebarModule } from 'ng-sidebar';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { EventsComponent } from './components/main/events/events.component';
 import { AgmCoreModule } from '@agm/core';
@@ -72,7 +72,6 @@ import { ChatComponent } from './components/main/chat/chat.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SidebarModule.forRoot(),
     BrowserAnimationsModule,
     NgxWebstorageModule.forRoot(),
     AgmCoreModule.forRoot({
@@ -80,7 +79,8 @@ import { ChatComponent } from './components/main/chat/chat.component';
     }),
     MatInputModule,
     MatSelectModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSidenavModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

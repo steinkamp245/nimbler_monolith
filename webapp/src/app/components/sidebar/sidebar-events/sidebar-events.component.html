@@ -4,16 +4,11 @@
         <div id="category">
             <p>Event category</p>
             <mat-form-field>
-                <select matNativeControl required>
-                    <option value="sport">Sport</option>
-                    <option value="chill">Chill</option>
-                    <option value="party">Party</option>
-                    <option value="education">Education</option>
-                    <option value="other">Other</option>
-                </select>
+                <mat-select placeholder="Categories" [formControl]="categories" multiple>
+                    <mat-option *ngFor="let category of categoryList" [value]="category">{{category}}</mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
-
         <br><br>
 
         <div id="slider">

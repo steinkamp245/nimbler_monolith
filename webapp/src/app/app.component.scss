@@ -1,78 +1,81 @@
-.myInnerContainer{
-  flex-grow: 1;
+.wrapper {
+  height: 100vh;
+  position: relative;
 }
 
-.mainContainer {
+
+mat-sidenav {
+  width: 240px;
+}
+
+.sidebar {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  flex-direction: column;
   height: 100%;
 }
 
-ng-sidebar-container {
-  height: 92%;
-  position: absolute;
-  top: 8%;
-}
-
-.wrapper {
-  height: 100vh;
+.categorieSetup {
+  flex-grow: 1;
+  overflow-y: scroll;
+  position: relative;
 }
 
 app-navbar {
   position: absolute;
-  top: 0%;
-  width: 100vw;
-  height: 8%;
-}
-
-app-sidebar-categories {
+  height: 8vh;
   width: 100%;
 }
 
-app-sidebar-events {
-  width: 100%;
-  flex-grow: 1;
-  position: relative;
-  overflow-y: scroll;
+.sidebarContainer {
+  position: absolute;
+  height: 92%;
+  top: 8%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
 }
+
 
 
 @media screen and (max-height: 664px) {
-  .myInnerContainer{
-    flex-grow: 1;
+  .wrapper {
+    height: 100vh;
+    position: relative;
   }
   
-  .mainContainer {
+  
+  mat-sidenav {
+    width: 240px;
+  }
+  
+  .sidebar {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
     height: 100%;
   }
   
-  ng-sidebar-container {
-    height: 85%;
-    position: absolute;
-    top: 15%;
-  }
-  
-  .wrapper {
-    height: 100vh;
+  .categorieSetup {
+    flex-grow: 1;
+    overflow-y: scroll;
+    position: relative;
   }
   
   app-navbar {
     position: absolute;
-    top: 0%;
-    width: 100vw;
-    height: 15%;
-  }
-  
-  app-sidebar-categories {
+    height: 14vh;
     width: 100%;
   }
   
-  app-sidebar-events {
-    width: 100%;
-    flex-grow: 1;
-    position: relative;
-    overflow-y: scroll;
+  .sidebarContainer {
+    position: absolute;
+    height: 86%;
+    top: 14%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
   }
 }
