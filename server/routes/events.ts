@@ -32,10 +32,15 @@ router.post('/', async (req, res) => {
     const { error } = validatePostPutReqBody(req.body);
     if (error) return res.status(400).json({ message: error.details[0].message });
 
-    const event = new Event({ createdBy: res.locals.user.userId, ...req.body });
-    await event.save();
-    res.status(201).json(_.pick(event,
-        ['_id', 'createdBy', 'participants', 'title', 'description', 'availablePlaces', 'location', 'genre', 'startDate', 'endDate']));
+    try {
+        const event = new Event({ createdBy: res.locals.user.userId, ...req.body });
+        await event.save();
+        res.status(201).json(_.pick(event,
+            ['_id', 'createdBy', 'participants', 'title', 'description', 'availablePlaces', 'location', 'genre', 'startDate', 'endDate']));
+    }
+    catch (err) {
+        res.status(400).json({ message: err.message });
+    }
 });
 
 router.put('/:id', validateObjectId, async (req, res) => {
@@ -46,10 +51,15 @@ router.put('/:id', validateObjectId, async (req, res) => {
     if (!event) return res.status(404).json({ message: 'An event with the given id was not found' });
     if (event.createdBy != res.locals.user.userId) return res.status(403).json({ message: 'You are not authorized to update this event' });
 
-    event.set(req.body);
-    event.save();
-    res.status(200).send(_.pick(event,
-        ['_id', 'createdBy', 'participants', 'title', 'description', 'availablePlaces', 'location', 'genre', 'startDate', 'endDate']));
+    try {
+        event.set(req.body);
+        event.save();
+        res.status(200).send(_.pick(event,
+            ['_id', 'createdBy', 'participants', 'title', 'description', 'availablePlaces', 'location', 'genre', 'startDate', 'endDate']));
+    }
+    catch (err) {
+        res.status(400).json({ message: err.message });
+    }
 });
 
 router.patch('/join/:id', validateObjectId, async (req, res) => {
@@ -62,9 +72,14 @@ router.patch('/join/:id', validateObjectId, async (req, res) => {
     const alreadyParticipating = event.participants.some(eventId => eventId == res.locals.user.userId);
     if (alreadyParticipating) return res.status(403).json({ message: 'You already participate at this event' });
 
-    event.participants.push(res.locals.user.userId);
-    await event.save();
-    res.status(204).send();
+    try {
+        event.participants.push(res.locals.user.userId);
+        await event.save();
+        res.status(204).send();
+    }
+    catch (err) {
+        res.status(400).json({ message: err.message });
+    }
 });
 
 router.patch('/leave/:id', validateObjectId, async (req, res) => {
@@ -73,19 +88,29 @@ router.patch('/leave/:id', validateObjectId, async (req, res) => {
 
     const index = event.participants.findIndex(userId => userId == res.locals.user.userId);
     if (index === -1) return res.status(404).json({ message: 'You are not participating in this event' });
-    event.participants.splice(index, 1);
-    await event.save();
 
-    res.status(204).send();
+    try {
+        event.participants.splice(index, 1);
+        await event.save();
+        res.status(204).send();
+    }
+    catch (err) {
+        res.status(400).json({ message: err.message });
+    }
 });
 
 router.delete('/:id', validateObjectId, async (req, res) => {
     const event = await Event.findById(req.params.id);
     if (!event) return res.status(404).json({ message: 'An event with the given id was not found' });
-
     if (event.createdBy != res.locals.user.userId) return res.status(403).json({ message: 'You are not authorized to delete this event' });
-    await event.remove();
-    res.status(204).send();
+
+    try {
+        await event.remove();
+        res.status(204).send();
+    }
+    catch (err) {
+        res.status(400).json({ message: err.message });
+    }
 });
 
 export default router;

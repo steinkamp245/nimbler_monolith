@@ -40,12 +40,12 @@ export let EventSchema = new mongoose.Schema({
     }],
     title: {
         type: String,
-        max: 25,
+        maxlength: 25,
         required: true
     },
     description: {
         type: String,
-        max: 255,
+        maxlength: 255,
         required: true
     },
     availablePlaces: {

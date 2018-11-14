@@ -1,6 +1,6 @@
 import express from 'express';
 import passport from 'passport';
-import { authService } from '../services/auth.service';
+import { authService, authMiddleware } from '../services/auth.service';
 import _ from 'lodash';
 import { IUser } from '../models/user';
 
@@ -8,7 +8,7 @@ import { IUser } from '../models/user';
 const router = express.Router();
 
 
-router.get('/sign-out', (req, res) => {
+router.get('/sign-out', authMiddleware, (req, res) => {
     res.clearCookie('jwt-token');
     res.status(204).send();
 });

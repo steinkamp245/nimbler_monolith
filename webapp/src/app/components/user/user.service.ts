@@ -4,6 +4,7 @@ import { Observable, throwError as _throw } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http/src/response';
 import canteenConf from '../../../../canteen.conf';
+import { EventConfig } from './user';
 
 
 @Injectable({
@@ -12,9 +13,9 @@ import canteenConf from '../../../../canteen.conf';
 export class UserService {
   private options = { withCredentials: true };
   private baseURL = canteenConf.restApiUrl;
+
   isAuthenticated = false;
   @Output() isAuthenticatedEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
-
 
   constructor(private http: HttpClient) { }
 
@@ -39,6 +40,25 @@ export class UserService {
       map(data => data.isAuthenticated),
       catchError(this.handleError)
     );
+  }
+
+  getEventConfig(): Observable<EventConfig> {
+    return this.http.get<{ eventConfig: EventConfig }>(this.baseURL + '/api/users/eventConfig', this.options).pipe(
+      map(result => result.eventConfig),
+      catchError(this.handleError)
+    );
+  }
+
+  putEventConfigCategories(categories: string[]): Observable<{ categories: string[] }> {
+    return this.http.put<{ categories: string[] }>(this.baseURL + '/api/users/eventConfig/categories', { categories }, this.options).pipe(
+      catchError(this.handleError)
+    )
+  }
+
+  putEventConfigLatestStartTime(latestStartTime: number): Observable<{ latestStartTime: number }> {
+    return this.http.put<{ latestStartTime: number }>(this.baseURL + '/api/users/eventConfig/latestStartTime', { latestStartTime }, this.options).pipe(
+      catchError(this.handleError)
+    )
   }
 
   private handleError(error: HttpErrorResponse): Observable<any> {
