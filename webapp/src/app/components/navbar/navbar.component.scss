@@ -67,6 +67,11 @@ span {
     height: 47px;
     border: 2px solid;
     font-size: 18px;
+    border: 2px solid #ff4081;
+}
+
+.btn-outline-danger:hover {
+    background-color: #ff4081;
 }
 
 
