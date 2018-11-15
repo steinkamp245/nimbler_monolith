@@ -1,24 +1,32 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component } from '@angular/core';
 import { UserService } from '../user.service';
-
+import { Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
-export class SignInComponent implements OnInit {
+export class SignInComponent {
+  submitClicked = false;
 
-  constructor(public activeModal: NgbActiveModal, private userService: UserService) { }
+  loginForm = this.fb.group({
+    email: ['', Validators.compose([Validators.required, Validators.email])],
+    password: ['', Validators.required]
+  });
 
-  ngOnInit() {
+  onSubmit() {
+    this.submitClicked = true;
+    console.log(this.loginForm.value);
   }
+
+  constructor(private fb: FormBuilder, private userService: UserService) { }
+
 
   facebookSignInClicked() {
     this.userService.socialSignIn('facebook');
   }
+
 
   googleSignInClicked() {
     this.userService.socialSignIn('google');

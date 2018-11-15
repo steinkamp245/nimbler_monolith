@@ -4,10 +4,8 @@
     <ul class="navbar-nav ">
 
       <li *ngIf="!userService.isAuthenticated">
-        <div class="myContainer">
-          <app-modal [component]="signInComponent">
+        <div class="myContainer" routerLink="/users/sign-in" routerLinkActive="active" tabindex="-1">
             <button type="button" class="btn btn-outline-danger">Login</button>
-          </app-modal>
         </div>
       </li>
 

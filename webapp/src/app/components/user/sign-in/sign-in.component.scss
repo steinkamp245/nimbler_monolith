@@ -1,12 +1,138 @@
-.ng-valid:not(form)   { border-left: 5px solid #28a745; /* green */ }
-.ng-invalid:not(form) { border-left: 5px solid #dc3545; /* red */   }
+h1 {
+  font-family: futura-pt,Futura New,Avenir,sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+
+.btn-outline-danger {
+  border-radius: 40px;
+  width: 400px;
+  height: 60px;
+  border: 2px solid;
+  font-size: 18px;
+  border: 2px solid #eb008d;
+  background-color: #eb008d;
+  color: white;
+  box-shadow: 0px 0.25rem 0.5rem rgba(235,0,141,.16);
+  box-shadow: 0px 0.5rem 1rem rgba(235,0,141,.2);
+}
+
+
+
+
+.btn-outline-danger:hover {
+  background-color: #eb008d;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.head {
+  position: absolute;
+  text-align: center;
+  top: 7%;
+  width: 50%;
+  left: 25%;
+}
+
+#cancel {
+  position: absolute;
+  height: 65px;
+  width: 65px;
+  opacity: 0.25;
+  top: 4%;
+  right: 2.5%;
+}
+
+#cancel:hover {
+  position: absolute;
+  height: 65px;
+  width: 65px;
+  opacity: 0.35;
+  top: 4%;
+  right: 2.5%;
+}
+
+.main {
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.example-form {
+  min-width: 200px;
+  max-width: 550px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.foot {
+  position: absolute;
+  width: 100%;
+  bottom: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social {
+  p {   
+      font-family: futura-pt,Futura New,Avenir,sans-serif;
+      color: rgba(0, 0, 0, 0.495); 
+      width: 100%; 
+      text-align: center; 
+      border-bottom: 1px solid rgba(0, 0, 0, 0.212); 
+      line-height: 0.1em;
+      margin: 10px 0 20px; 
+   } 
+   
+   p span { 
+       background:#fff; 
+       padding:0 10px; 
+   }
+}
 
 .btn-google {
-    color: white;
-    background-color: #ea4335;
-  }
-  
-  .btn-facebook {
-    color: white;
-    background-color: #3b5998;
-  }
+  color: white;
+  background-color: #ea4335;
+  border-radius: 30px;
+  width: 50%;
+  display: inline-block;
+  margin-top: 0px;
+  margin-left: 3px;
+
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+  border-radius: 30px;
+  width: 50%;
+  display: inline-block;
+  margin-top: 0px;
+  margin-right: 3px;
+}
+
+.socialButtons {
+
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  position: relative;
+}

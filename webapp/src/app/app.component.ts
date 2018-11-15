@@ -44,8 +44,6 @@ export class AppComponent implements OnInit {
     this.geoService.getGeolocationBlockedSubject().subscribe(
       result => this.showNoGeolocationErrorScreen = result
     );
-
-
   }
 
 

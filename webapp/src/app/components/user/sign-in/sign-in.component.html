@@ -1,20 +1,58 @@
-<div class="modal-header">
-  <h4 class="modal-title">Login</h4>
-  <span class="close" aria-label="Close" (click)="activeModal.dismiss()">
-    <span aria-hidden="true">&times;</span>
-  </span>
-</div>
-<div class="modal-body">
-  <div class="container">
-    <button (click)="facebookSignInClicked()" class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
-        class="fab fa-facebook-f mr-2"></i>
-      Sign in with Facebook</button>
-    <br><br>
-    <button (click)="googleSignInClicked()" class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
-        class="fab fa-google mr-2"></i>
-      Sign in with Google</button>
-  </div>
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cancel</button>
+<div class="wrapper">
+    <div class="head">
+        <h1>Sign in to Nimbler</h1>
+        
+    </div>
+    <img id="cancel" src="/assets/cancel.svg">
+
+
+    <div class="main">
+
+        <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="myForm">
+            <mat-form-field class="example-full-width">
+                <input formControlName="email" autofocus matInput placeholder="Email" required>
+                <mat-error *ngIf="
+                    (loginForm.controls.email.dirty || loginForm.controls.email.touched) 
+                    && !loginForm.controls.email.valid">
+                    Please enter a valid email address
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input formControlName="password" type="password" matInput placeholder="Password" required>
+                <mat-error *ngIf="
+                    (loginForm.controls.password.dirty || loginForm.controls.password.touched) 
+                    && !loginForm.controls.password.valid">
+                    Required field
+                </mat-error>
+                <mat-error *ngIf="loginError">
+                    Email or password is incorrect
+                </mat-error>
+            </mat-form-field>
+        </form>
+        <p>Don't have an account yet? Sign up here</p>
+
+
+    </div>
+
+    <div class="foot">
+        <div>
+            <button [disabled]="!loginForm.valid" form="myForm" type="submit" class="btn btn-outline-danger">Log in</button>
+            <div class="social">
+                <br>
+                <p><span>Or connect with</span></p>
+                <div class="socialButtons">
+                    <button (click)="facebookSignInClicked()" class="btn btn-lg btn-facebook btn-block text-uppercase"
+                        type="submit"><i class="fab fa-facebook-f mr-2"></i>
+                        Facebook</button>
+                    <button (click)="googleSignInClicked()" class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
+                            class="fab fa-google mr-2"></i>
+                        Google</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 </div>
