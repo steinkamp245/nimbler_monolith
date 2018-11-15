@@ -11,7 +11,7 @@ export class SignInComponent {
   submitClicked = false;
 
   loginForm = this.fb.group({
-    email: ['', Validators.compose([Validators.required, Validators.email])],
+    email: ['', Validators.compose([Validators.email])],
     password: ['', Validators.required]
   });
 

@@ -68,12 +68,23 @@ span {
     border: 2px solid;
     font-size: 18px;
     border: 2px solid #eb008d;
+    color: #eb008d;
 }
 
 .btn-outline-danger:hover {
     background-color: #eb008d;
+    color: white;
 }
 
+.btn-outline-danger:active {
+    background-color: white !important;
+    color: #eb008d !important;
+    border: 2px solid #eb008d !important;
+}
+
+.btn-outline-danger:focus {
+    box-shadow: 0 0 0 0 !important;
+}
 
 .btn-outline-secondary {
     border-radius: 20px;

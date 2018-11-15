@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionStorageService } from 'ngx-webstorage';
-import { GeolocationService } from '../../geolocation/geolocation.service';
 
 @Component({
   selector: 'app-sign-in-redirect',
@@ -15,7 +14,7 @@ export class SignInRedirectComponent implements OnInit {
   ngOnInit() {
     const redirectURL = this.sessionSt.retrieve("redirectURL");
     this.sessionSt.clear("redirectURL");
-    this.router.navigate([redirectURL || '/home']);
+    this.router.navigate([redirectURL || '/main/events']);
   }
 
 }

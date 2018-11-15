@@ -25,11 +25,31 @@ input:-webkit-autofill {
 }
 
 
-
-
 .btn-outline-danger:hover {
-  background-color: #eb008d;
+  border-radius: 40px;
+  width: 400px;
+  height: 60px;
+  border: 2px solid;
+  font-size: 18px;
+  border: 2px solid #dc0084 !important;
+  background-color: #dc0084 !important;
+  color: white;
+  box-shadow: 0px 0.25rem 0.5rem rgba(235,0,141,.16);
+  box-shadow: 0px 0.5rem 1rem rgba(235,0,141,.2);
 }
+
+.btn-outline-danger:active {
+  background-color: #eb008d !important;
+  color: white !important;
+  border: 2px solid #eb008d !important;
+}
+
+.btn-outline-danger:focus {
+  box-shadow: 0px 0.25rem 0.5rem rgba(235,0,141,.16) !important;
+  box-shadow: 0px 0.5rem 1rem rgba(235,0,141,.2) !important;
+}
+
+
 
 .wrapper {
   position: relative;
