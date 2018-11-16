@@ -1,6 +1,6 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable, throwError as _throw } from 'rxjs';
+import { Observable, throwError as _throw, BehaviorSubject } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http/src/response';
 import canteenConf from '../../../../canteen.conf';
@@ -15,13 +15,17 @@ export class UserService {
   private baseURL = canteenConf.restApiUrl;
 
   isAuthenticated = false;
-  @Output() isAuthenticatedEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
 
-  changeAuthenticationStatus(status: boolean) {
-    this.isAuthenticatedEvent.emit(status);
+  setIsAuthenticatedSubject(status: boolean) {
+    this.isAuthenticatedSubject.next(status);
     this.isAuthenticated = status;
+  }
+
+  getIsAuthenticatedSubject(): Observable<boolean> {
+    return this.isAuthenticatedSubject.asObservable();
   }
 
   socialSignIn(socialService: 'google' | 'facebook') {
@@ -30,7 +34,7 @@ export class UserService {
 
   signOut(): Observable<null> {
     return this.http.get(this.baseURL + '/auth/sign-out', this.options).pipe(
-      map(data => this.changeAuthenticationStatus(false)),
+      map(data => this.setIsAuthenticatedSubject(false)),
       catchError(this.handleError)
     );
   }

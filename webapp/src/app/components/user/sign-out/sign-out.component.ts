@@ -12,7 +12,7 @@ export class SignOutComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {
     this.userService.signOut().subscribe(
       success => {
-        this.userService.changeAuthenticationStatus(false);
+        this.userService.setIsAuthenticatedSubject(false);
         this.router.navigate(['/home']);
       },
       error => console.log(error)

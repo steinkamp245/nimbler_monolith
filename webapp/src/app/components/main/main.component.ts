@@ -22,9 +22,8 @@ export class MainComponent implements OnInit {
     private geoService: GeolocationService, private userDataCacheService: UserDataCacheService) { }
 
   ngOnInit() {
-    this.userService.tokenCheck().subscribe(
+    this.userService.getIsAuthenticatedSubject().subscribe(
       result => {
-        this.userService.changeAuthenticationStatus(result);
         this.opened = result;
         if (result) {
           this.geoService.getGeolocation();
@@ -35,19 +34,10 @@ export class MainComponent implements OnInit {
       }
     );
 
-    this.userService.isAuthenticatedEvent.subscribe(
-      result => this.opened = result
-    );
-
-    this.geoService.getGeolocationAvailableSubject().subscribe(
-      result => this.opened = result
-    );
-
     this.geoService.getGeolocationBlockedSubject().subscribe(
       result => this.showNoGeolocationErrorScreen = result
     );
   }
-
 
 
   isActive(component: string) {
