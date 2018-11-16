@@ -48,7 +48,7 @@
     "@types/supertest": "^2.0.5",
     "debug": "^3.1.0",
     "jest": "^23.5.0",
-    "morgan": "^1.9.0",
+    "morgan": "^1.9.1",
     "supertest": "^3.1.0"
   }
 }
